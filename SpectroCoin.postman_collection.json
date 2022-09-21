@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "5ae1470a-52d0-4966-a632-89a658fcff4c",
+		"name": "SpectroCoin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23459649"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.friendlyLast).to.eql(\"1 BTC = 18,945.41 USD\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://spectrocoin.com/scapi/ticker/usd/btc"
+			},
+			"response": []
+		}
+	]
+}
